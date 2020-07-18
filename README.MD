@@ -1,4 +1,4 @@
-# SASS & SCSS
+# SASS & SCSS: overview
 
 *March 2020*
 
@@ -26,7 +26,7 @@
 - Install Ruby: `sudo apt-get install ruby-full`
 - Install SASS (a 'gem' in Ruby): `sudo gem install sass`
 - Test: `sass --version`
-- or with: scout-app.io
+- or with [scout-app.io](scout-app.io) but not recommended for an easy use
 
 ## Activate sass:
 
