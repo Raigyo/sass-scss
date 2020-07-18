@@ -146,9 +146,10 @@ sass
 -- default.scss
 ```
 
-In 'default.scss' import the '_header.scss" with `@import 'header';`.
+In 'default.scss' import the '_header.scss" with `@import 'header';`
+or with '.sass' files `@import header`.
 
-Of course after the variable declaration...
+Of course after the variable declaration so you could use variable in the children scss...
 
 For instance:
 
@@ -162,8 +163,14 @@ body {
 }
 ```
 
+## Inheritance and bloc of properties
+
+We can declare a *bloc of properties* using Sass. For that we use '%'.
+
 
 ## Useful links
+
+- [SASS & SCSS : la formation ULTIME](https://www.udemy.com/course/sass-scss-la-formation-ultime/)
 - [SCSS: Sassy Cascading Style Sheets](https://sharkcoder.com/tools/scss)
 - [CSS with superpowers](https://marksheet.io/sass.html)
 - []()

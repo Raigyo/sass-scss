@@ -1,0 +1,13 @@
+footer {
+    padding: 50px;
+    color: white;
+    background-color: $primaryColor;
+
+    span {
+        color: #ffffff77;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

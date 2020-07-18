@@ -1,21 +1,22 @@
 $primaryColor:purple;
 
 @import 'header';
+@import 'footer';
 
 body {
     background-color: #ceaf26;
 }
 
-footer {
-    padding: 50px;
-    background-color: $primaryColor;
-
-    span {
-        color: #ffffff77;
-
-        &:hover {
-            text-decoration: underline;
-        }
-    }
+.alert {
+    padding: 15px;
+    border: 1px solid #ccc;
+    color: white;
 }
 
+.alert-green {
+    background-color: green;
+}
+
+.alert-red {
+    background-color: red;
+}

@@ -1,17 +1,30 @@
 header {
   padding: 50px;
+  color: white;
   background-color: purple;
   margin-bottom: 500px; }
 
-body {
-  background-color: #ceaf26; }
-
 footer {
   padding: 50px;
+  color: white;
   background-color: purple; }
   footer span {
     color: #ffffff77; }
     footer span:hover {
       text-decoration: underline; }
+
+body {
+  background-color: #ceaf26; }
+
+.alert {
+  padding: 15px;
+  border: 1px solid #ccc;
+  color: white; }
+
+.alert-green {
+  background-color: green; }
+
+.alert-red {
+  background-color: red; }
 
 /*# sourceMappingURL=default.css.map */
