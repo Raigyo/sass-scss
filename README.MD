@@ -44,7 +44,7 @@
 
 - //Comment: not rendered by sass in css but still in sass/scss file
 (so take care of what you write!)
-- /*Comment: rendered by sass in css*/
+- /\*Comment: rendered by sass in css\*/
 
 ## Variables
 
