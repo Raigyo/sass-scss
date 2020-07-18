@@ -42,7 +42,7 @@
 (so take care of what you write!)
 - /*Comment: rendered by sass in css*/
 
-## variables
+## Variables
 
 Exemple:
 
