@@ -7,16 +7,18 @@ body {
     background-color: #ceaf26;
 }
 
-.alert {
+%alert {
     padding: 15px;
     border: 1px solid #ccc;
     color: white;
 }
 
 .alert-green {
+    @extend %alert;
     background-color: green;
 }
 
 .alert-red {
+    @extend %alert;
     background-color: red;
 }

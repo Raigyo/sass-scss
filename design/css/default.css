@@ -16,7 +16,7 @@ footer {
 body {
   background-color: #ceaf26; }
 
-.alert {
+.alert-green, .alert-red {
   padding: 15px;
   border: 1px solid #ccc;
   color: white; }

@@ -132,7 +132,7 @@ Using scss (it will be rendered as if it was written in usual css):
 To import scss into an another scss without rendering it in 'css'
 (for instance if you don't need or want to import the css file a 'html' file):
 
-Use the underscore before the name:
+Use the underscore '_' before the name and use '@' to import the file in '.scss'
 
 Exemple for a new css, 'header':
 
@@ -149,8 +149,6 @@ sass
 In 'default.scss' import the '_header.scss" with `@import 'header';`
 or with '.sass' files `@import header`.
 
-Of course after the variable declaration so you could use variable in the children scss...
-
 For instance:
 
 ```
@@ -163,9 +161,87 @@ body {
 }
 ```
 
+Of course we have to import it after the variables declaration
+so you could use variable in the children scss...
+
 ## Inheritance and bloc of properties
 
 We can declare a *bloc of properties* using Sass. For that we use '%'.
+
+**Before using sass**:
+
+HTML:
+
+```
+    <div class="alert alert-green">
+      Green box
+    </div>
+
+    <div class="alert alert-red">
+      Red box
+    </div>
+```
+
+Css:
+
+```
+.alert {
+    padding: 15px;
+    border: 1px solid #ccc;
+    color: white;
+}
+
+.alert-green {
+    background-color: green;
+}
+
+.alert-red {
+    background-color: red;
+}
+
+```
+
+=> Inheritence is managed in html file!
+
+**With Sass**:
+
+HTML:
+
+```
+    <div class="alert-green">
+      Green box
+    </div>
+
+    <div class="alert-red">
+      Red box
+    </div>
+```
+
+Scss:
+
+```
+%alert {
+    padding: 15px;
+    border: 1px solid #ccc;
+    color: white;
+}
+
+.alert-green {
+    @extend %alert;
+    background-color: green;
+}
+
+.alert-red {
+    @extend %alert;
+    background-color: red;
+}
+
+```
+
+=> Inheritance is managed in Scss!
+
+=> If a bloc of properties is not called in a class, it's not rendered by Sass.
+
 
 
 ## Useful links
