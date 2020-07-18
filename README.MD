@@ -1,18 +1,26 @@
 # SASS & SCSS: overview
 
-*March 2020*
+*July 2020*
 
 > 🔨 Training from Udemy
 '[SASS & SCSS : la formation ULTIME](https://www.udemy.com/course/sass-scss-la-formation-ultime/)'.
 
 ![sass logo](readme-img/sass-logo.png)
 
-## SASS: Syntacticaly Awesome Style Sheets
+## What is SASS?
+
+Sass is a preprocessor for CSS. It has been developped using Ruby.
+
+With Sass you can expend the possibilities of CSS.
+
+There are two ways to use Sass: **sass files** or **scss files**.
+
+### SASS: Syntacticaly Awesome Style Sheets ('.sass')
 
 - concise syntax: no curly braces '{}' or semicolons ';'
 - more easy to read
 
-## SCSS: Sassy Cascading Style Sheets
+### SCSS: Sassy Cascading Style Sheets ('.scss')
 
 - written like CSS
 - precise syntax, force to write clearly
@@ -21,40 +29,60 @@
 
 => we can choose the syntax used with Sass preprocessor: '.sass' OR '.scss'
 
-=> syntax used in the following exemples is Sassy Cascading Style Sheets / '.scss'
-
 => but it will be the same principle with '.sass' files excepted for the syntax
+
+## Why using Sass?
+
+Because using Sass make your code factorizable, portable and more easy and quicker
+to maintain or update.
+
+Sass is **DRY**, Css is **WET**...
+
+Let's see why...
+
+Syntax used in the following exemples and in the repo is Sassy Cascading Style Sheets / '.scss'.
+
+But it's easy to adapt them for '.sass'
 
 ![My Sassy Cascading Style Sheets](readme-img/my-sassy.jpg)
 
-## Installation of SASS preprocessor:
+## How to install?
+
+Sass can be used with Windows and Windows Subsystem for Linux (WSL), Linux and MacOsx...
+
+I use it with WSL.
+
+### Installation of SASS preprocessor:
 
 - Install Ruby: `sudo apt-get install ruby-full`
 - Install SASS (a 'gem' in Ruby): `sudo gem install sass`
 - Test: `sass --version`
-- or with [scout-app.io](scout-app.io) but not recommended for an easy use
+- Or you can install it using [scout-app.io](scout-app.io)
+(but it's more easy to use it with the terminal)
 
-## Activate sass:
+### Activate sass:
 
 - In project, use relative path: `sass sass/default.scss css/default.css`
 (or any other name for the scss/css. It's better to use the same for the two versions)
 
 Sass will create the rendered css in 'css/default.css'. It will also add 'default.css.map'
 
-## Automatic processing/watch:
+### Automatic processing/watch:
 
 - `sass --watch sass/default.scss:css/default.css`
 
 Otherwise you will have to relaunch the command `sass sass/default.scss css/default.css`
 to regenerate the '.scss' file.
 
-## Comments with sass/scss:
+## Sass in a few points
+
+### Comments with sass/scss:
 
 - // Comment: not rendered by sass in css but still in sass/scss file
 (so take care of what you write!)
 - /\* Comment: rendered by sass in css \*/
 
-## Variables
+### Variables
 
 Exemple:
 
@@ -67,13 +95,16 @@ header {
 
 ```
 
-## Operations:
+=> if you have to change a color for instance, no need to change it in evey classes,
+but you just need to do it once!
+
+### Operations:
 
 - additions and subtractions (ex: `padding: 10px + 2px;` or `padding: 10px - 2;`)
 - strings and concatenation
 - multiplications and divisions (ex: `15px * 15` but not `15px / 5px`)
 
-## Nesting
+### Nesting
 
 Exemple css:
 
@@ -101,7 +132,9 @@ footer {
 }
 ```
 
-## Current Selector '&' (= parent value )
+=> with sass you can group datas, factorise
+
+### Current Selector '&' (= parent value )
 
 Exemple with  css:
 
@@ -127,7 +160,9 @@ Using scss (it will be rendered as if it was written in usual css):
     }
 ```
 
-## Importation
+=> again, it's more easy to factorise
+
+### Importation
 
 To import scss into an another scss without rendering it in 'css'
 (for instance if you don't need or want to import the css file a 'html' file):
@@ -164,7 +199,7 @@ body {
 Of course we have to import it after the variables declaration
 so you could use variable in the children scss...
 
-## Inheritance and bloc of properties
+### Inheritance and bloc of properties
 
 We can declare a *bloc of properties* using Sass. For that we use '%'.
 
@@ -238,7 +273,7 @@ Scss:
 
 ```
 
-=> Inheritance is managed in Scss!
+=> **Inheritance is managed in Scss**!
 
 => If a bloc of properties is not called in a class, it's not rendered by Sass.
 
