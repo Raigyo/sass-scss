@@ -1,16 +1,9 @@
-//Comment: not rendered by sass in css but still in scss
-/*Comment: rendered by sass in css*/
-
 $primaryColor:purple;
+
+@import 'header';
 
 body {
     background-color: #ceaf26;
-}
-
-header {
-    padding: 50px;
-    background-color: $primaryColor;
-    margin-bottom: 500px;
 }
 
 footer {

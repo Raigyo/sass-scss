@@ -1,11 +1,10 @@
-/*Comment: rendered by sass in css*/
-body {
-  background-color: #ceaf26; }
-
 header {
   padding: 50px;
   background-color: purple;
   margin-bottom: 500px; }
+
+body {
+  background-color: #ceaf26; }
 
 footer {
   padding: 50px;

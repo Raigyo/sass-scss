@@ -10,18 +10,20 @@
 ## SASS: Syntacticaly Awesome Style Sheets
 
 - concise syntax: no curly braces '{}' or semicolons ';'
-- easy to read
+- more easy to read
 
 ## SCSS: Sassy Cascading Style Sheets
 
 - written like CSS
 - precise syntax, force to write clearly
-- integration easier into an existing site using CSS
-- future base for CSS4?
+- integration/refactoring easier into an existing site using CSS
+- future base for CSS specs? (for instance variables)
 
 => we can choose the syntax used with Sass preprocessor: '.sass' OR '.scss'
 
 => syntax used in the following exemples is Sassy Cascading Style Sheets / '.scss'
+
+=> but it will be the same principle with '.sass' files excepted for the syntax
 
 ![My Sassy Cascading Style Sheets](readme-img/my-sassy.jpg)
 
@@ -35,16 +37,22 @@
 ## Activate sass:
 
 - In project, use relative path: `sass sass/default.scss css/default.css`
+(or any other name for the scss/css. It's better to use the same for the two versions)
+
+Sass will create the rendered css in 'css/default.css'. It will also add 'default.css.map'
 
 ## Automatic processing/watch:
 
 - `sass --watch sass/default.scss:css/default.css`
 
+Otherwise you will have to relaunch the command `sass sass/default.scss css/default.css`
+to regenerate the '.scss' file.
+
 ## Comments with sass/scss:
 
-- //Comment: not rendered by sass in css but still in sass/scss file
+- // Comment: not rendered by sass in css but still in sass/scss file
 (so take care of what you write!)
-- /\*Comment: rendered by sass in css\*/
+- /\* Comment: rendered by sass in css \*/
 
 ## Variables
 
@@ -121,13 +129,44 @@ Using scss (it will be rendered as if it was written in usual css):
 
 ## Importation
 
+To import scss into an another scss without rendering it in 'css'
+(for instance if you don't need or want to import the css file a 'html' file):
 
+Use the underscore before the name:
+
+Exemple for a new css, 'header':
+
+```
+css
+-- default.css
+-- default.css.map
+
+sass
+-- **_header.scss**
+-- default.scss
+```
+
+In 'default.scss' import the '_header.scss" with `@import 'header';`.
+
+Of course after the variable declaration...
+
+For instance:
+
+```
+$primaryColor:purple;
+
+@import 'header';
+
+body {
+    background-color: #ceaf26;
+}
+```
 
 
 ## Useful links
-[SCSS: Sassy Cascading Style Sheets](https://sharkcoder.com/tools/scss)
-[CSS with superpowers](https://marksheet.io/sass.html)
-[]()
-[]()
-[]()
-[]()
+- [SCSS: Sassy Cascading Style Sheets](https://sharkcoder.com/tools/scss)
+- [CSS with superpowers](https://marksheet.io/sass.html)
+- []()
+- []()
+- []()
+- []()
