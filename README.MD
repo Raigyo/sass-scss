@@ -12,7 +12,7 @@
 - concise syntax: no curly braces '{}' or semicolons ';'
 - easy to read
 
-## SCSS:
+## SCSS: Sassy Cascading Style Sheets
 
 - written like CSS
 - precise syntax, force to write clearly
@@ -20,6 +20,7 @@
 - future base for CSS4?
 
 => we can choose the syntax used with Sass preprocessor: '.sass' OR '.scss'
+=> syntax used in the following exemples is '.scss'
 
 ## Installation of SASS preprocessor:
 
