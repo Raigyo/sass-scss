@@ -142,7 +142,7 @@ css
 -- default.css.map
 
 sass
--- **_header.scss**
+-- _header.scss
 -- default.scss
 ```
 
