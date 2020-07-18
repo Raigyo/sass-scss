@@ -1,0 +1,18 @@
+/*Comment: rendered by sass in css*/
+body {
+  background-color: #ceaf26; }
+
+header {
+  padding: 50px;
+  background-color: purple;
+  margin-bottom: 500px; }
+
+footer {
+  padding: 50px;
+  background-color: purple; }
+  footer span {
+    color: #ffffff77; }
+    footer span:hover {
+      text-decoration: underline; }
+
+/*# sourceMappingURL=default.css.map */
