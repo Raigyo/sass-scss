@@ -20,7 +20,10 @@
 - future base for CSS4?
 
 => we can choose the syntax used with Sass preprocessor: '.sass' OR '.scss'
-=> syntax used in the following exemples is '.scss'
+
+=> syntax used in the following exemples is Sassy Cascading Style Sheets / '.scss'
+
+![My Sassy Cascading Style Sheets](readme-img/my-sassy.jpg)
 
 ## Installation of SASS preprocessor:
 
@@ -117,3 +120,14 @@ Using scss (it will be rendered as if it was written in usual css):
 ```
 
 ## Importation
+
+
+
+
+## Useful links
+[SCSS: Sassy Cascading Style Sheets](https://sharkcoder.com/tools/scss)
+[CSS with superpowers](https://marksheet.io/sass.html)
+[]()
+[]()
+[]()
+[]()
