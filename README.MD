@@ -38,7 +38,8 @@
 
 ## Comments with sass/scss:
 
-- //Comment: not rendered by sass in css but still in sass
+- //Comment: not rendered by sass in css but still in sass/scss file
+(so take care of what you write!)
 - /*Comment: rendered by sass in css*/
 
 ## variables
