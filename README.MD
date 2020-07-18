@@ -104,10 +104,10 @@ header {
 
 ```
 
-=> if you have to change a color for instance, no need to change it in evey classes,
-but you just need to do it once!
+=> if you have to change a color used in several classes for instance,
+no need to change it in each classes, but you just need to do it once!
 
-### Operations:
+#### Operations with variables:
 
 - additions and subtractions (ex: `padding: 10px + 2px;` or `padding: 10px - 2;`)
 - strings and concatenation
