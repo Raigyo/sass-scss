@@ -5,6 +5,15 @@
 > 🔨 Training from Udemy
 '[SASS & SCSS : la formation ULTIME](https://www.udemy.com/course/sass-scss-la-formation-ultime/)'.
 
+## Concept covered
+
+- Variables
+- Nesting
+- Current Selector '&'
+- Importation '@'
+- Inheritance, bloc of properties '%', @extend
+- Mixins
+
 ![sass logo](readme-img/sass-logo.png)
 
 ## What is SASS?
@@ -33,7 +42,7 @@ There are two ways to use Sass: **sass files** or **scss files**.
 
 ## Why using Sass?
 
-Because using Sass make your code factorizable, portable and more easy and quicker
+Because using Sass make your code factorisable, portable, more easy and quicker
 to maintain or update.
 
 Sass is **DRY**, Css is **WET**...
@@ -276,6 +285,8 @@ Scss:
 => **Inheritance is managed in Scss**!
 
 => If a bloc of properties is not called in a class, it's not rendered by Sass.
+
+### Mixins
 
 
 
