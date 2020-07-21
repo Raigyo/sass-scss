@@ -141,9 +141,11 @@ footer {
 }
 ```
 
-=> with sass you can group datas, factorise
+=> with sass you can group datas by stacking selectors using nesting
 
-### Current Selector '&' (= parent value )
+=> factorise
+
+### Current Selector '&' (= parent name )
 
 Exemple with  css:
 
@@ -363,6 +365,35 @@ Inheritance => when properties on the selectors don't have to change
 
 Mixin => when properties on the selector have to change
 
+### Functions
+
+Mixin generate properties, functions generate results.
+
+#### Built-in modules
+
+See [SASS Built-In Modules](https://sass-lang.com/documentation/modules).
+
+Befor creating a new function, check if it already exists in SASS.
+
+#### Create functions (@function)
+
+Exemple:
+
+```
+@function calculateDivision ($nombreA, $nombreB){
+    @return $nombreA/ $nombreB;
+}
+
+footer {
+    content: calculateDivision (15.3); //=> content: 5; in code source
+}
+
+```
+
+### Conditions
+
+
+### Loops
 
 
 ## Useful links
@@ -370,7 +401,7 @@ Mixin => when properties on the selector have to change
 - [SASS & SCSS : la formation ULTIME](https://www.udemy.com/course/sass-scss-la-formation-ultime/)
 - [SCSS: Sassy Cascading Style Sheets](https://sharkcoder.com/tools/scss)
 - [CSS with superpowers](https://marksheet.io/sass.html)
-- []()
+- [SASS Built-In Modules](https://sass-lang.com/documentation/modules)
 - []()
 - []()
 - []()

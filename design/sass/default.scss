@@ -24,11 +24,16 @@ $primaryColor:purple;
     margin-left: auto;
 }
 
-@mixin border-radius ($degree) {
+@mixin border-radius($degree) {
     -moz-border-radius: $degree;
     -webkit-border-radius: $degree;
     -ms-border-radius: $degree;
     border-radius: $degree;
+}
+
+//Function
+@function calculateDivision($numberA, $numberB){
+    @return $numberA / $numberB;
 }
 
 body {
@@ -62,6 +67,7 @@ footer {
     background-color: $primaryColor;
     @include border-radius(15px);
     font-family: 'Roboto', sans-serif;
+    content: calculateDivision(15, 3); //=> content: 5; in code source
 
     span {
         color: #ffffff77;
