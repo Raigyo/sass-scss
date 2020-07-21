@@ -78,7 +78,7 @@ Sass will create the rendered css in 'css/default.css'. It will also add 'defaul
 
 ### Automatic processing/watch:
 
-- `sass --watch sass/default.scss:css/default.css`
+- `sass --watch design/sass/default.scss:design/css/default.css`
 
 Otherwise you will have to relaunch the command `sass sass/default.scss css/default.css`
 to regenerate the '.scss' file.
@@ -286,7 +286,82 @@ Scss:
 
 => If a bloc of properties is not called in a class, it's not rendered by Sass.
 
-### Mixins
+### Mixins & includes
+
+A Mixin is a block of code that lets us group CSS declarations we may reuse throughout our site.
+
+Css:
+
+```
+#logo {
+    width: 135px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#slogan {
+    width: 150px;
+    margin-right: auto;
+    margin-left: auto;
+}
+```
+
+scss:
+
+```
+@mixin center {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#logo {
+    width: 135px;
+    @include center;
+}
+
+#slogan {
+    width: 150px;
+    @include center;
+}
+```
+=> The mixins are reusable
+
+=> Mixins can take arguments and include selectors
+
+With arguments:
+
+```
+@mixin border-radius ($degree) {
+    -moz-border-radius: $degree;
+    -webkit-border-radius: $degree;
+    -ms-border-radius: $degree;
+    border-radius: $degree;
+}
+
+footer {
+    @include border-radius(15px);
+}
+```
+
+Mixin exemple for Google Fonts:
+
+```
+@mixin googleFonts ($font) {
+    @import url('https://fonts.googleapis.com/css2?family=#{$font}');
+}
+
+@include googleFonts(Roboto);
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+```
+
+**Tips**:
+
+Inheritance => when properties on the selectors don't have to change
+
+Mixin => when properties on the selector have to change
 
 
 

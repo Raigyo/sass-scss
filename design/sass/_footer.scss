@@ -2,6 +2,7 @@ footer {
     padding: 50px;
     color: white;
     background-color: $primaryColor;
+    @include border-radius(15px);
 
     span {
         color: #ffffff77;

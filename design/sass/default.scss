@@ -1,16 +1,39 @@
 $primaryColor:purple;
 
 @import 'header';
-@import 'footer';
+//@import 'footer';
 
-body {
-    background-color: #ceaf26;
-}
-
+// Inheritance
 %alert {
     padding: 15px;
     border: 1px solid #ccc;
     color: white;
+}
+
+// Mixins
+
+@mixin googleFonts ($font) {
+    @import url('https://fonts.googleapis.com/css2?family=#{$font}');
+}
+
+@include googleFonts(Roboto);
+@include googleFonts("Noto+Sans+TC");
+
+@mixin center {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@mixin border-radius ($degree) {
+    -moz-border-radius: $degree;
+    -webkit-border-radius: $degree;
+    -ms-border-radius: $degree;
+    border-radius: $degree;
+}
+
+body {
+    background-color: #ceaf26;
+    font-family: 'Noto Sans TC', sans-serif;
 }
 
 .alert-green {
@@ -21,4 +44,30 @@ body {
 .alert-red {
     @extend %alert;
     background-color: red;
+}
+
+#logo {
+    width: 135px;
+    @include center;
+}
+
+#slogan {
+    width: 150px;
+    @include center;
+}
+
+footer {
+    padding: 50px;
+    color: white;
+    background-color: $primaryColor;
+    @include border-radius(15px);
+    font-family: 'Roboto', sans-serif;
+
+    span {
+        color: #ffffff77;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
