@@ -700,5 +700,3 @@ Will render in CSS:
 - [SASS Built-In Modules](https://sass-lang.com/documentation/modules)
 - [CSS with superpowers](https://marksheet.io/sass.html)
 - [Loops in CSS Preprocessors](https://css-tricks.com/loops-css-preprocessors/)
-- []()
-- []()
