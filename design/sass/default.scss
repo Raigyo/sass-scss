@@ -2,6 +2,22 @@
 $primaryColor:purple;
 $theme: ""; /*  purple / black (otherwise default) */
 
+//Lists
+$iconsLists: twitter-square, google-plus-square, facebook-square, share-alt-square;
+$addIcon: "address-card";
+$iconsLists: append($iconsLists, $addIcon, comma);//space/comma/auto
+$defaultMap: ( color: blue, font-size: 1em );
+$colorMap: (
+  color-blue: blue,
+  color-red: red,
+  color-white: white,
+  color-yellow: yellow,
+  color-green: green
+);
+$colorMap2: (
+   brown, black, purple, orange, cyan
+);
+
 // Import
 @import 'header';
 //@import 'footer';
@@ -53,6 +69,45 @@ $theme: ""; /*  purple / black (otherwise default) */
     @return $numberA / $numberB;
 }
 
+//Loops
+
+$columns: 6;
+//@for $i from 1 through 6 {
+@for $i from 1 through $columns {
+    .grid-#{$i} {
+        width: 100px*$i;
+    }
+}
+
+//@each $name in twitter-square, google-plus-square, facebook-square, share-alt-square {
+@each $name in $iconsLists {
+    .#{$name}-icon {
+        background-image: url('/img/#{$name}.png');
+    }
+}
+
+$nbGrids: 1;
+@while $nbGrids <= 6 {
+    .grid-#{$nbGrids} {
+        width: 100px*$nbGrids;
+    }
+    $nbGrids: $nbGrids +1;
+}
+
+// Each + Map
+
+@each $key,$value in $colorMap {
+  .#{$key}{
+    color: #{$value};
+  }
+};
+
+@each $value in $colorMap2 {
+  .color-#{$value}{
+    color: #{$value};
+  }
+};
+
 /*---------------*/
 
 body {
@@ -76,9 +131,12 @@ body {
     @include center;
 }
 
+//Map
+
 #slogan {
     width: 150px;
     @include center;
+    color: map-get($defaultMap, color);
 }
 
 footer {
@@ -88,6 +146,7 @@ footer {
     @include border-radius(15px);
     font-family: 'Roboto', sans-serif;
     content: calculateDivision(15, 3); //=> content: 5; in code source
+    content: nth($iconsLists, 1); //pick an itemp from a list using index. content: twitter-square;
 
     span {
         color: #ffffff77;

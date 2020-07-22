@@ -13,7 +13,16 @@
 - Importation '@'
 - Inheritance, bloc of properties '%', @extend
 - Mixins
-- Functions and Built-in modules
+- Functions and Built-in modules, (@function)
+- Conditions (@if, @else if, @else)
+- Loops (@for, @each, @while)
+- Lists (Function nth, Append)
+- @at-root
+- Maps
+
+[Sass/Scss file](https://github.com/Raigyo/sass-scss/blob/master/design/sass/default.scss)
+
+[Css generated](https://github.com/Raigyo/sass-scss/blob/master/design/css/default.css)
 
 ![sass logo](readme-img/sass-logo.png)
 
@@ -148,7 +157,7 @@ footer {
 
 ### Current Selector '&' (= parent name )
 
-Exemple with  css:
+Exemple with CSS:
 
 ```
 span {
@@ -160,7 +169,7 @@ span:hover {
 }
 ```
 
-Using scss (it will be rendered as if it was written in usual css):
+Using SCSS (it will be rendered as if it was written in usual css):
 
 ```
     span {
@@ -176,7 +185,7 @@ Using scss (it will be rendered as if it was written in usual css):
 
 ### Importation
 
-To import scss into an another scss without rendering it in 'css'
+To import SCSS into an another SCSS without rendering it in 'css'
 (for instance if you don't need or want to import the css file a 'html' file):
 
 Use the underscore '_' before the name and use '@' to import the file in '.scss'
@@ -209,7 +218,7 @@ body {
 ```
 
 Of course we have to import it after the variables declaration
-so you could use variable in the children scss...
+so you could use variable in the children SCSS...
 
 ### Inheritance and bloc of properties
 
@@ -229,7 +238,7 @@ HTML:
     </div>
 ```
 
-Css:
+CSS:
 
 ```
 .alert {
@@ -264,7 +273,7 @@ HTML:
     </div>
 ```
 
-Scss:
+SCSS:
 
 ```
 %alert {
@@ -285,7 +294,7 @@ Scss:
 
 ```
 
-=> **Inheritance is managed in Scss**!
+=> **Inheritance is managed in SCSS**!
 
 => If a bloc of properties is not called in a class, it's not rendered by Sass.
 
@@ -293,7 +302,7 @@ Scss:
 
 A Mixin is a block of code that lets us group CSS declarations we may reuse throughout our site.
 
-Css:
+CSS:
 
 ```
 #logo {
@@ -309,7 +318,7 @@ Css:
 }
 ```
 
-scss:
+SCSS:
 
 ```
 @mixin center {
@@ -374,7 +383,7 @@ Mixin generate properties, functions generate results.
 
 See [SASS Built-In Modules](https://sass-lang.com/documentation/modules).
 
-Befor creating a new function, check if it already exists in SASS.
+Before creating a new function, check if it already exists in SASS.
 
 #### Create functions (@function)
 
@@ -438,6 +447,251 @@ body {
 
 ### Loops (@for, @each, @while)
 
+**@for**
+
+Iterates from one value to another value, returning $i as the current position in the loop.
+
+Exemple, generate grids with **@for**:
+
+```
+$columns: 5;
+
+//@for $i from 1 through 6 {
+@for $i from 1 through $columns {
+    .grid-#{$i} {
+        width: 100px*$i;
+    }
+}
+```
+
+Will generate in CSS:
+
+```
+.grid-1 {
+  width: 100px; }
+
+.grid-2 {
+  width: 200px; }
+
+.grid-3 {
+  width: 300px; }
+
+.grid-4 {
+  width: 400px; }
+
+.grid-5 {
+  width: 500px; }
+
+.grid-6 {
+  width: 600px; }
+```
+
+**@each**
+
+The @each loop iterates each value in an array.
+
+Exemple, generate icons with **@each**:
+
+```
+$iconsLists: twitter-square, google-plus-square, facebook-square, share-alt-square;
+
+//@each $name in twitter-square, google-plus-square, facebook-square, share-alt-square {
+@each $name in $iconsLists {
+    .#{$name}-icon {
+        background-image: url('/img/#{$name}.png');
+    }
+}
+```
+
+Will generate in CSS:
+
+```
+.twitter-square-icon {
+  background-image: url("/img/twitter-square.png"); }
+
+.google-plus-square-icon {
+  background-image: url("/img/google-plus-square.png"); }
+
+.facebook-square-icon {
+  background-image: url("/img/facebook-square.png"); }
+
+.share-alt-square-icon {
+  background-image: url("/img/share-alt-square.png"); }
+```
+
+**@while**
+
+A while loop is simply conditional. It will execute until a given condition is met.
+
+Exemple, generate grids with **@while**:
+
+```
+$nbGrids: 1;
+@while $nbGrids <= 6 {
+    .grid-#{$nbGrids} {
+        width: 100px*$nbGrids;
+    }
+    $nbGrids: $nbGrids +1;
+}
+```
+
+Will generate in CSS:
+
+```
+.grid-1 {
+  width: 100px; }
+
+.grid-2 {
+  width: 200px; }
+
+.grid-3 {
+  width: 300px; }
+
+.grid-4 {
+  width: 400px; }
+
+.grid-5 {
+  width: 500px; }
+
+.grid-6 {
+  width: 600px; }
+```
+
+### Lists
+
+Used with @each. Cfr.supra.
+
+Use quotes if an item has several words.
+
+#### Function nth
+
+Pick an itemp from a list using index.
+
+```
+$iconsLists: twitter-square, google-plus-square, facebook-square, share-alt-square;
+footer {
+    content: nth($iconsLists, 1); //=> content: twitter-square;
+}
+```
+
+=> For once, with lists in SASS **index begins at 1**!!!!!!!!
+
+#### Add a value to a list (append)
+
+```
+$iconsLists: twitter-square, google-plus-square, facebook-square, share-alt-square;
+$addIcon: "address-card";
+$iconsLists: append($iconsLists, $addIcon, comma); //space/comma/auto
+```
+
+#### Maps
+
+Maps in Sass hold pairs of keys and values, and make it easy to look up a value
+by its corresponding key.
+
+```
+$default: ( color: blue, font-size: 1em );
+#slogan {
+    color: map-get($default, color); // blue
+}
+```
+
+Returns the value in $map associated with $key.
+
+Exemple with each loop to generate classes:
+
+```
+$colorMap: (
+  color-blue: blue,
+  color-red: red,
+  color-white: white,
+  color-yellow: yellow,
+  color-green: green
+);
+@each $key,$value in $colorMap {
+  .#{$key}{
+    color: #{$value};
+  }
+};
+```
+
+or:
+
+```
+$colorMap2: (
+   blue, red, white, yellow, green
+);
+@each $value in $colorMap2 {
+  .color-#{$value}{
+    color: #{$value};
+  }
+};
+```
+
+Will render in CSS:
+
+```
+.color-blue {
+  color: blue; }
+
+.color-red {
+  color: red; }
+
+.color-white {
+  color: white; }
+
+.color-yellow {
+  color: yellow; }
+
+.color-green {
+  color: green; }
+```
+
+### @at-root
+
+The @at-root rule is usually written @at-root <selector> { ... }
+and causes everything within it to be emitted at the root of the document
+instead of using the normal nesting.
+
+Exemple:
+
+```
+.item {
+    color: #333;
+
+    @at-root {
+        .item-wrapper {
+            color: #666;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .item-child {
+        background-color: #555;
+    }
+}
+```
+
+Will render in CSS:
+
+```
+.item {
+  color: #333;
+}
+.item-wrapper {
+  color: #666;
+}
+.item-wrapper img {
+  width: 100%;
+}
+.item .item-child {
+  background-color: #555;
+}
+```
+
+
 
 ## Useful links
 
@@ -445,6 +699,6 @@ body {
 - [SCSS: Sassy Cascading Style Sheets](https://sharkcoder.com/tools/scss)
 - [SASS Built-In Modules](https://sass-lang.com/documentation/modules)
 - [CSS with superpowers](https://marksheet.io/sass.html)
-- []()
+- [Loops in CSS Preprocessors](https://css-tricks.com/loops-css-preprocessors/)
 - []()
 - []()

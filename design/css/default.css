@@ -16,6 +16,87 @@ body {
   background-color: white;
   color: black; }
 
+.grid-1 {
+  width: 100px; }
+
+.grid-2 {
+  width: 200px; }
+
+.grid-3 {
+  width: 300px; }
+
+.grid-4 {
+  width: 400px; }
+
+.grid-5 {
+  width: 500px; }
+
+.grid-6 {
+  width: 600px; }
+
+.twitter-square-icon {
+  background-image: url("/img/twitter-square.png"); }
+
+.google-plus-square-icon {
+  background-image: url("/img/google-plus-square.png"); }
+
+.facebook-square-icon {
+  background-image: url("/img/facebook-square.png"); }
+
+.share-alt-square-icon {
+  background-image: url("/img/share-alt-square.png"); }
+
+.address-card-icon {
+  background-image: url("/img/address-card.png"); }
+
+.grid-1 {
+  width: 100px; }
+
+.grid-2 {
+  width: 200px; }
+
+.grid-3 {
+  width: 300px; }
+
+.grid-4 {
+  width: 400px; }
+
+.grid-5 {
+  width: 500px; }
+
+.grid-6 {
+  width: 600px; }
+
+.color-blue {
+  color: blue; }
+
+.color-red {
+  color: red; }
+
+.color-white {
+  color: white; }
+
+.color-yellow {
+  color: yellow; }
+
+.color-green {
+  color: green; }
+
+.color-brown {
+  color: brown; }
+
+.color-black {
+  color: black; }
+
+.color-purple {
+  color: purple; }
+
+.color-orange {
+  color: orange; }
+
+.color-cyan {
+  color: cyan; }
+
 /*---------------*/
 body {
   font-family: 'Noto Sans TC', sans-serif; }
@@ -34,7 +115,8 @@ body {
 #slogan {
   width: 150px;
   margin-right: auto;
-  margin-left: auto; }
+  margin-left: auto;
+  color: blue; }
 
 footer {
   padding: 50px;
@@ -45,7 +127,8 @@ footer {
   -ms-border-radius: 15px;
   border-radius: 15px;
   font-family: 'Roboto', sans-serif;
-  content: 5; }
+  content: 5;
+  content: twitter-square; }
   footer span {
     color: #ffffff77; }
     footer span:hover {
