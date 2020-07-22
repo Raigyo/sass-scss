@@ -1,3 +1,4 @@
+/*  purple / black (otherwise default) */
 @import url("https://fonts.googleapis.com/css2?family=Roboto");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC");
 header {
@@ -12,7 +13,11 @@ header {
   color: white; }
 
 body {
-  background-color: #ceaf26;
+  background-color: white;
+  color: black; }
+
+/*---------------*/
+body {
   font-family: 'Noto Sans TC', sans-serif; }
 
 .alert-green {
@@ -40,7 +45,7 @@ footer {
   -ms-border-radius: 15px;
   border-radius: 15px;
   font-family: 'Roboto', sans-serif;
-  xxx: 5; }
+  content: 5; }
   footer span {
     color: #ffffff77; }
     footer span:hover {

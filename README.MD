@@ -13,6 +13,7 @@
 - Importation '@'
 - Inheritance, bloc of properties '%', @extend
 - Mixins
+- Functions and Built-in modules
 
 ![sass logo](readme-img/sass-logo.png)
 
@@ -78,7 +79,7 @@ Sass will create the rendered css in 'css/default.css'. It will also add 'defaul
 
 ### Automatic processing/watch:
 
-- `sass --watch design/sass/default.scss:design/css/default.css`
+- `sass --watch sass/default.scss:css/default.css` (use relative path)
 
 Otherwise you will have to relaunch the command `sass sass/default.scss css/default.css`
 to regenerate the '.scss' file.
@@ -390,18 +391,60 @@ footer {
 
 ```
 
-### Conditions
+### Conditions (@if, @else if, @else)
 
+```
+@if (condition) {
+    // We try a first condition
+}
 
-### Loops
+@else if (condition) {
+    // Then another
+}
+
+[...] // As many @else if (condition) as we want
+
+@else {
+    // If no condition is verified
+}
+```
+
+Exemple, creating theme using conditions:
+
+```
+// Variables
+$theme: ""; // purple / black (otherwise white by default)
+
+// Inheritance / Blocks of properties
+%theme {
+    @if ($theme == purple){
+        background-color: purple;
+        color: white;
+    }
+    @else if ($theme == black){
+        background-color: black;
+        color: white;
+    }
+    @else {
+        background-color: white;
+        color: black;
+    }
+}
+
+body {
+    @extend %theme;
+}
+```
+
+### Loops (@for, @each, @while)
 
 
 ## Useful links
 
 - [SASS & SCSS : la formation ULTIME](https://www.udemy.com/course/sass-scss-la-formation-ultime/)
 - [SCSS: Sassy Cascading Style Sheets](https://sharkcoder.com/tools/scss)
-- [CSS with superpowers](https://marksheet.io/sass.html)
 - [SASS Built-In Modules](https://sass-lang.com/documentation/modules)
+- [CSS with superpowers](https://marksheet.io/sass.html)
 - []()
 - []()
 - []()
